@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Task Manager</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search tasks...">
+            </div>
+        </header>
+
+        <main>
+            <div class="task-container">
+                <div class="add-task-section">
+                    <h2>Add New Task</h2>
+                    <form id="addTaskForm">
+                        <input type="text" id="taskTitle" placeholder="Task Title" required>
+                        <textarea id="taskDescription" placeholder="Task Description" required></textarea>
+                        <select id="taskPriority">
+                            <option value="high">High Priority</option>
+                            <option value="medium">Medium Priority</option>
+                            <option value="low">Low Priority</option>
+                        </select>
+                        <input type="date" id="taskDueDate" required>
+                        <button type="submit">Add Task</button>
+                    </form>
+                </div>
+
+                <div class="task-list-section">
+                    <h2>Tasks</h2>
+                    <div class="task-filters">
+                        <select id="priorityFilter">
+                            <option value="all">All Priorities</option>
+                            <option value="high">High Priority</option>
+                            <option value="medium">Medium Priority</option>
+                            <option value="low">Low Priority</option>
+                        </select>
+                    </div>
+                    <div id="taskList" class="task-list"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Task Details</h2>
+            <form id="editTaskForm">
+                <input type="text" id="editTaskTitle" required>
+                <textarea id="editTaskDescription" required></textarea>
+                <select id="editTaskPriority">
+                    <option value="high">High Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="low">Low Priority</option>
+                </select>
+                <input type="date" id="editTaskDueDate" required>
+                <button type="submit">Update Task</button>
+                <button type="button" id="deleteTask">Delete Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/TaskManager.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
